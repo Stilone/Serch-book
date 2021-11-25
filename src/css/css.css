@@ -1,0 +1,37 @@
+.container {
+    margin: 0 auto;
+    width: 700px;
+}
+
+.searchContainerText {
+    margin: 15px 0 15px 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnSearch {
+    width: 70px;
+    height: 55px;
+}
+
+.searchSelect {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardsContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cardsContainerItem {
+    margin-bottom: 20px;
+}
