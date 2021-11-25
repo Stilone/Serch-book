@@ -1,8 +1,8 @@
 import React, {useRef, useState} from 'react';
-import Search from '../search-component/search.component';
+import Search from '../../components/search-component/search.component';
 import BooksCards from './books.cards';
 import Button from '@mui/material/Button';
-import {ProgressCircular} from '../progress-component/progress.circular';
+import {ProgressCircular} from '../../components/progress-component/progress.circular';
 import PropTypes from 'prop-types';
 import {BookType} from '../../types/types';
 

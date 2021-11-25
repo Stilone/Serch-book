@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/index.css';
-import {BooksPageComponent} from "./components/page-component/books.page.wrapper";
-import {BookPageComponent} from "./components/books-component/book.card.wrapper";
+import {BooksPageComponent} from "./pages/books.page/books.page.wrapper";
+import {BookPageComponent} from "./pages/book.page/book.page.wrapper";
 import {
     BrowserRouter as Router,
     Routes,

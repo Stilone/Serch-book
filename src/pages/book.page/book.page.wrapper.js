@@ -1,12 +1,9 @@
 import {getBooksAction} from '../../redux/actions/books.action';
 import {connect} from 'react-redux';
-import BooksPage from './books.page.component';
+import BookCard from './book.page';
 
 const mapStateToProps = (state) => {
-    return {
-        books: state.books,
-        total: state.total
-    };
+    return {books: state.books};
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -17,4 +14,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export const BooksPageComponent = connect(mapStateToProps, mapDispatchToProps)(BooksPage);
+export const BookPageComponent = connect(mapStateToProps, mapDispatchToProps)(BookCard);
