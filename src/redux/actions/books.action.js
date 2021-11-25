@@ -5,7 +5,7 @@ export const getBooksAction = (state, merge = false, load) => {
         const {books} = getState()
         fetch(`https://www.googleapis.com/books/v1/volumes?q=${state.text}+subject:${state.categories}&orderBy=${state.sort}&startIndex=${state.startIndex}&maxResults=30&key=AIzaSyAM866byHG_AquX8S1BBCyC-PMvdnH1VTs`)
             .then(response => response.json())
-            .then(data =>
+            .then(data => {
                 dispatch({
                     type: CREATE_BOOKS,
                     payload: {
@@ -13,9 +13,9 @@ export const getBooksAction = (state, merge = false, load) => {
                         totalBooks: data.totalItems
                     }
                 })
-            )
-        setTimeout(() => {
-            load(false)
-        }, 500)
+                setTimeout(() => {
+                    load(false)
+                }, 500)
+            })
     }
 };
