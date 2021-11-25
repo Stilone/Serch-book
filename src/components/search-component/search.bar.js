@@ -1,9 +1,13 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import '../../css/css.css'
+import PropTypes from 'prop-types';
 
-export const SearchBar = ({condition, createInputChange}) => {
+const SearchBar = ({condition, onChangeBooksQuery}) => {
+    const handleChange = (event) => {
+        onChangeBooksQuery('text', event.target.value);
+    };
+
     return (
         <Box
             component='form'
@@ -18,7 +22,19 @@ export const SearchBar = ({condition, createInputChange}) => {
                 label='Enter the title'
                 variant='outlined'
                 value={condition.text}
-                onChange={createInputChange('text')}/>
+                onChange={handleChange}/>
         </Box>
     );
 };
+
+SearchBar.propTypes = {
+    condition: PropTypes.shape({
+        text: PropTypes.string,
+        categories: PropTypes.string,
+        sort: PropTypes.string,
+        startIndex: PropTypes.number
+    }).isRequired,
+    onChangeBooksQuery: PropTypes.func.isRequired,
+};
+
+export default SearchBar

@@ -5,44 +5,45 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import '../../css/css.css'
 import {useNavigate} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {BookType} from '../../types/types';
 
-export const BookCards = ({books}) => {
-    const navigate = useNavigate()
+const BooksCards = ({books}) => {
+    const navigate = useNavigate();
 
     const handleClick = (index) => {
-        navigate(`/bookCard/${index}`)
-    }
+        navigate(`/bookCard/${index}`);
+    };
 
     const title = (string) => {
         if (string.length <= 29) {
-            return string
+            return string;
         } else {
-            const newString = string.slice(0, 29) + '...'
-            return newString
+            const newString = string.slice(0, 29) + '...';
+            return newString;
         }
-    }
+    };
 
     return (
-        <div className='cardsContainer'>
+        <div className='cards-container'>
             {books.map((item, index) =>
-                <Card sx={{maxWidth: 180}} key={item.etag} className='cardsContainerItem'>
+                <Card sx={{maxWidth: 180}} key={`book-${index}`} className='cards-container-item'>
                     <CardMedia
                         component='img'
                         alt='image is not default'
                         height='200'
-                        image={item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.smallThumbnail : 'https://bookmix.ru/groups/images/0/3/9/groups_1582375475.jpg'}
+                        image={item.imageLinks ? item.imageLinks.smallThumbnail : 'https://bookmix.ru/groups/images/0/3/9/groups_1582375475.jpg'}
                     />
                     <CardContent>
                         <Typography gutterBottom variant='h6' component='div'>
-                            {title(item.volumeInfo.title)}
+                            {title(item.title)}
                         </Typography>
                         <Typography variant='body2' color='text.secondary'>
-                            categories: {item.volumeInfo.categories ? item.volumeInfo.categories[0] : null}
+                            categories: {item.categories ? item.categories[0] : null}
                         </Typography>
                         <Typography variant='body2' color='text.secondary'>
-                            authors: {item.volumeInfo.authors}
+                            authors: {item.authors}
                         </Typography>
                     </CardContent>
                     <CardActions>
@@ -52,3 +53,9 @@ export const BookCards = ({books}) => {
         </div>
     );
 };
+
+BooksCards.propTypes = {
+    books: PropTypes.arrayOf(BookType).isRequired
+}
+
+export default BooksCards

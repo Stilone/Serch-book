@@ -5,13 +5,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import PropTypes from 'prop-types';
+import {BookType} from '../../types/types';
 
-export const BookCard = ({state}) => {
-    const navigate = useNavigate()
-    const params = useParams()
+export const BookCard = ({books}) => {
+    const navigate = useNavigate();
+    const params = useParams();
     const handleClick = () => {
-        navigate('/')
-    }
+        navigate('/');
+    };
 
     return (
         <div>
@@ -21,23 +23,29 @@ export const BookCard = ({state}) => {
                     component='img'
                     alt='green iguana'
                     height='340'
-                    image={state[params.id].volumeInfo.imageLinks ? state[params.id].volumeInfo.imageLinks.smallThumbnail : 'https://bookmix.ru/groups/images/0/3/9/groups_1582375475.jpg'}
+                    image={books[params.id].imageLinks ? books[params.id].imageLinks.smallThumbnail : 'https://bookmix.ru/groups/images/0/3/9/groups_1582375475.jpg'}
                 />
                 <CardContent>
                     <Typography gutterBottom variant='h5' component='div'>
-                        {state[params.id].volumeInfo.title}
+                        {books[params.id].title}
                     </Typography>
                     <Typography variant='body2' color='text.secondary'>
-                        categories: {state[params.id].volumeInfo.categories ? state[params.id].volumeInfo.categories : 'no category'}
+                        categories: {books[params.id].categories ? books[params.id].categories : 'no category'}
                     </Typography>
                     <Typography variant='body2' color='text.secondary'>
-                        authors: {state[params.id].volumeInfo.authors}
+                        authors: {books[params.id].authors}
                     </Typography>
                     <Typography variant='body2' color='text.secondary'>
-                        {state[params.id].volumeInfo.description ? state[params.id].volumeInfo.description : 'no description'}
+                        {books[params.id].description ? books[params.id].description : 'no description'}
                     </Typography>
                 </CardContent>
             </Card>
         </div>
     );
 };
+
+BookCard.propTypes = {
+    books: PropTypes.arrayOf(BookType).isRequired
+}
+
+export default BookCard

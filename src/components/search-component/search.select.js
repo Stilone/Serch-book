@@ -3,8 +3,13 @@ import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import NativeSelect from '@mui/material/NativeSelect';
+import PropTypes from 'prop-types';
 
-export const SearchSelect = ({createInputChange}) => {
+const SearchSelect = ({onChangeBooksQuery}) => {
+    const handleChange = (event) => {
+        onChangeBooksQuery('categories', event.target.value);
+    };
+
     return (
         <Box>
             <FormControl>
@@ -17,7 +22,7 @@ export const SearchSelect = ({createInputChange}) => {
                         name: 'age',
                         id: 'uncontrolled-native',
                     }}
-                    onChange={createInputChange('categories')}
+                    onChange={handleChange}
                 >
                     <option value=' '>all</option>
                     <option value='art'>art</option>
@@ -31,3 +36,9 @@ export const SearchSelect = ({createInputChange}) => {
         </Box>
     );
 };
+
+SearchSelect.propTypes = {
+    onChangeBooksQuery: PropTypes.func.isRequired
+}
+
+export default SearchSelect
