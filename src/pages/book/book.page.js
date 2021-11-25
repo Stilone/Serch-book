@@ -1,12 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {useNavigate, useParams} from 'react-router-dom';
+import {BookType} from '../../types/types';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import PropTypes from 'prop-types';
-import {BookType} from '../../types/types';
 
 export const BookCard = ({books}) => {
     const navigate = useNavigate();
@@ -46,6 +46,6 @@ export const BookCard = ({books}) => {
 
 BookCard.propTypes = {
     books: PropTypes.arrayOf(BookType).isRequired
-}
+};
 
-export default BookCard
+export default BookCard;

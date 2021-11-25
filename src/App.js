@@ -1,12 +1,12 @@
 import React from 'react';
-import './css/index.css';
-import {BooksPageComponent} from "./pages/books.page/books.page.wrapper";
-import {BookPageComponent} from "./pages/book.page/book.page.wrapper";
 import {
     BrowserRouter as Router,
     Routes,
     Route,
 } from 'react-router-dom';
+import {BooksPageComponent} from "./pages/books/books.page.wrapper";
+import {BookPageComponent} from "./pages/book/book.page.wrapper";
+import './css/index.css';
 
 export const App = () => {
     return (

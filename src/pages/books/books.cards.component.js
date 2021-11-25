@@ -1,27 +1,26 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {BookType} from '../../types/types';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {useNavigate} from 'react-router-dom';
-import PropTypes from 'prop-types';
-import {BookType} from '../../types/types';
 
-const BooksCards = ({books}) => {
+const BooksCardsComponent = ({books}) => {
     const navigate = useNavigate();
 
     const handleClick = (index) => {
         navigate(`/bookCard/${index}`);
     };
 
-    const title = (string) => {
-        if (string.length <= 29) {
-            return string;
+    const getTitle = (string) => {
+        if (string.length >= 29) {
+           return string.slice(0, 29) + '...';
         } else {
-            const newString = string.slice(0, 29) + '...';
-            return newString;
+            return string;
         }
     };
 
@@ -37,7 +36,7 @@ const BooksCards = ({books}) => {
                     />
                     <CardContent>
                         <Typography gutterBottom variant='h6' component='div'>
-                            {title(item.title)}
+                            {getTitle(item.title)}
                         </Typography>
                         <Typography variant='body2' color='text.secondary'>
                             categories: {item.categories ? item.categories[0] : null}
@@ -54,8 +53,8 @@ const BooksCards = ({books}) => {
     );
 };
 
-BooksCards.propTypes = {
+BooksCardsComponent.propTypes = {
     books: PropTypes.arrayOf(BookType).isRequired
-}
+};
 
-export default BooksCards
+export default BooksCardsComponent;

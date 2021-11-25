@@ -1,5 +1,5 @@
-import {getBooksAction} from '../../redux/actions/books.action';
 import {connect} from 'react-redux';
+import {getBooksAction} from '../../redux/actions/books.action';
 import BookCard from './book.page';
 
 const mapStateToProps = (state) => {

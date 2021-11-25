@@ -1,26 +1,26 @@
 import React from 'react';
-import Button from '@mui/material/Button';
-import SearchBar from './search.bar';
-import SearchSelect from './search.select';
-import SearchSort from './search.sort';
 import PropTypes from 'prop-types';
+import SearchBarComponent from './search.bar.component';
+import SearchSelectComponent from './search.select.component';
+import SearchSortComponent from './search.sort.component';
+import Button from '@mui/material/Button';
 
-const Search = ({onGetBooks, onLoad, condition, onChangeBooksQuery}) => {
+const Search = ({onGetBooks, onLoad, query, onChangeBooksQuery}) => {
     const getBooks = () => {
         onLoad(true);
-        onGetBooks(condition, false, onLoad);
+        onGetBooks(query, false, onLoad);
     };
 
     return (
         <div className='searchContainer'>
             <p className='search-container-text'>Search for books</p>
             <div className='search-bar'>
-                <SearchBar condition={condition} onChangeBooksQuery={onChangeBooksQuery}/>
+                <SearchBarComponent query={query} onChangeBooksQuery={onChangeBooksQuery}/>
                 <Button variant='contained' className='btn-search' onClick={getBooks}>Search</Button>
             </div>
             <div className='search-select'>
-                <SearchSelect onChangeBooksQuery={onChangeBooksQuery}/>
-                <SearchSort onChangeBooksQuery={onChangeBooksQuery}/>
+                <SearchSelectComponent onChangeBooksQuery={onChangeBooksQuery}/>
+                <SearchSortComponent onChangeBooksQuery={onChangeBooksQuery}/>
             </div>
         </div>
     );
@@ -29,14 +29,14 @@ const Search = ({onGetBooks, onLoad, condition, onChangeBooksQuery}) => {
 Search.propTypes = {
     onGetBooks: PropTypes.func.isRequired,
     onLoad: PropTypes.func.isRequired,
-    condition: PropTypes.shape({
+    query: PropTypes.shape({
         text: PropTypes.string,
         categories: PropTypes.string,
         sort: PropTypes.string,
         startIndex: PropTypes.number
     }).isRequired,
     onChangeBooksQuery: PropTypes.func.isRequired
-}
+};
 
-export default Search
+export default Search;
 

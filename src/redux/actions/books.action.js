@@ -6,26 +6,22 @@ export const getBooksAction = (state, merge = false, onLoad = () => {}) => {
         fetch(`https://www.googleapis.com/books/v1/volumes?q=${state.text}+subject:${state.categories}&orderBy=${state.sort}&startIndex=${state.startIndex}&maxResults=30&key=AIzaSyAM866byHG_AquX8S1BBCyC-PMvdnH1VTs`)
             .then(response => response.json())
             .then(data => {
-                if(!data.items) {
-                    return data.item = []
+                if (!data.items) {
+                    onLoad(false)
+                    data.item = []
                 }
 
-                const items = () => {
-                    const checkAuthors = (item) => {
-                        if(item.volumeInfo.authors) {
-                            return item.volumeInfo
-                        } else {
-                            item.volumeInfo.authors = ['-']
-                            return item.volumeInfo
-                        }
+                const items = data.items.map( (item) => {
+                    if (!item.volumeInfo.authors) {
+                        item.volumeInfo.authors = ['-']
                     }
-                    return data.items.map(checkAuthors)
-                }
+                    return item.volumeInfo
+                })
 
                 dispatch({
                     type: CREATE_BOOKS,
                     payload: {
-                        items: merge ? books.concat(items()) : items(),
+                        items: merge ? books.concat(items) : items,
                         totalBooks: data.totalItems
                     }
                 });
@@ -33,6 +29,6 @@ export const getBooksAction = (state, merge = false, onLoad = () => {}) => {
                     onLoad(false);
                 }, 500)
             })
-            .catch((error) => alert(error))
+            .catch(() => alert('The request failed'));
     };
 };

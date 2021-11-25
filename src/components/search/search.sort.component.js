@@ -1,44 +1,39 @@
 import React from 'react';
-import Box from '@mui/material/Box';
+import PropTypes from 'prop-types';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import NativeSelect from '@mui/material/NativeSelect';
-import PropTypes from 'prop-types';
+import Box from '@mui/material/Box';
 
-const SearchSelect = ({onChangeBooksQuery}) => {
+const SearchSortComponent = ({onChangeBooksQuery}) => {
     const handleChange = (event) => {
-        onChangeBooksQuery('categories', event.target.value);
+        onChangeBooksQuery('sort', event.target.value);
     };
 
     return (
         <Box>
             <FormControl>
                 <InputLabel variant='standard' htmlFor='uncontrolled-native'>
-                    Categories
+                    Sorting by
                 </InputLabel>
                 <NativeSelect
-                    defaultValue='all'
+                    defaultValue='relevance'
                     inputProps={{
                         name: 'age',
                         id: 'uncontrolled-native',
                     }}
                     onChange={handleChange}
                 >
-                    <option value=' '>all</option>
-                    <option value='art'>art</option>
-                    <option value='biography'>biography</option>
-                    <option value='computers'>computers</option>
-                    <option value='history'>history</option>
-                    <option value='medical'>medical</option>
-                    <option value='poetry'>poetry</option>
+                    <option value='relevance'>relevance</option>
+                    <option value='newest'>newest</option>
                 </NativeSelect>
             </FormControl>
         </Box>
     );
 };
 
-SearchSelect.propTypes = {
+SearchSortComponent.propTypes = {
     onChangeBooksQuery: PropTypes.func.isRequired
-}
+};
 
-export default SearchSelect
+export default SearchSortComponent;

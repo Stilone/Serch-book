@@ -2,7 +2,7 @@ import React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
-export const ProgressCircular = () => {
+export const ProgressCircularComponent = () => {
     return (
         <Box sx={{display: 'flex'}}>
             <CircularProgress/>

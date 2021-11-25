@@ -6,5 +6,5 @@ export const BookType = PropTypes.shape({
     description: PropTypes.string,
     imageLinks: PropTypes.shape({
         smallThumbnail: PropTypes.string
-    }),
+    })
 });

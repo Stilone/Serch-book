@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import PropTypes from 'prop-types';
 
-const SearchBar = ({condition, onChangeBooksQuery}) => {
+const SearchBarComponent = ({query, onChangeBooksQuery}) => {
     const handleChange = (event) => {
         onChangeBooksQuery('text', event.target.value);
     };
@@ -21,14 +21,14 @@ const SearchBar = ({condition, onChangeBooksQuery}) => {
                 id='outlined-basic'
                 label='Enter the title'
                 variant='outlined'
-                value={condition.text}
+                value={query.text}
                 onChange={handleChange}/>
         </Box>
     );
 };
 
-SearchBar.propTypes = {
-    condition: PropTypes.shape({
+SearchBarComponent.propTypes = {
+    query: PropTypes.shape({
         text: PropTypes.string,
         categories: PropTypes.string,
         sort: PropTypes.string,
@@ -37,4 +37,4 @@ SearchBar.propTypes = {
     onChangeBooksQuery: PropTypes.func.isRequired,
 };
 
-export default SearchBar
+export default SearchBarComponent;
