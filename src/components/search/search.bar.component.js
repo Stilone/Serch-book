@@ -12,16 +12,18 @@ const SearchBarComponent = ({query, onChangeBooksQuery}) => {
         <Box
             component='form'
             sx={{
-                '& > :not(style)': {m: 1, width: '70ch'},
+                '& > :not(style)': {m: 1},
             }}
             noValidate
             autoComplete='off'
+
         >
             <TextField
                 id='outlined-basic'
                 label='Enter the title'
                 variant='outlined'
                 value={query.text}
+                className='search'
                 onChange={handleChange}/>
         </Box>
     );

@@ -25,8 +25,8 @@ const BooksCardsComponent = forwardRef(({books, total, handleClickMore}, ref) =>
     };
 
     return (
-        <div>
-            <p className='total'>Books found: {total}</p>
+        <div className='books-card-component'>
+            <p>Books found: {total}</p>
             <div className='cards-container'>
                 {books.map((item, index) =>
                     <Card key={`book-${index}`} className='cards-container-item'>
@@ -52,7 +52,7 @@ const BooksCardsComponent = forwardRef(({books, total, handleClickMore}, ref) =>
                         </CardActions>
                     </Card>)}
             </div>
-            <Button variant='contained' className='load-more' ref={ref} onClick={handleClickMore}>Load more...</Button>
+            <Button variant='contained' ref={ref} onClick={handleClickMore}>Load more...</Button>
         </div>
     );
 });
