@@ -12,7 +12,7 @@ const Search = ({onGetBooks, onLoad, query, onChangeBooksQuery}) => {
     };
 
     return (
-        <div className='searchContainer'>
+        <div className='search-container'>
             <p className='search-container-text'>Search for books</p>
             <div className='search-bar'>
                 <SearchBarComponent query={query} onChangeBooksQuery={onChangeBooksQuery}/>

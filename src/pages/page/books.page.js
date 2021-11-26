@@ -1,10 +1,15 @@
 import React, {useRef, useState} from 'react';
 import PropTypes from 'prop-types';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from 'react-router-dom';
 import {BookType} from '../../types/types';
 import Search from '../../components/search/search.component';
-import BooksCardsComponent from './books.cards.component';
 import {ProgressCircularComponent} from '../../components/progress/progress.circular.component';
-import Button from '@mui/material/Button';
+import {BookCardComponent} from "../book/book.card.component";
+import BooksCardsComponent from "../books/books.cards.component";
 
 const BooksPage = ({books, total, onGetBooks}) => {
     const [query, setQuery] = useState({text: '', categories: '', sort: 'relevance', startIndex: 0});
@@ -20,7 +25,7 @@ const BooksPage = ({books, total, onGetBooks}) => {
         setOnLoad(loading);
     };
 
-    const handleClick = () => {
+    const handleClickMore = () => {
         handleLoad(true);
         if (books.length > total) {
             ref.current.style.display = 'none';
@@ -37,9 +42,12 @@ const BooksPage = ({books, total, onGetBooks}) => {
             return <ProgressCircularComponent/>
         } else if (total) {
             return <div>
-                <p>Books found: {total}</p>
-                <BooksCardsComponent books={books}/>
-                <Button variant='contained' ref={ref} onClick={handleClick}>Load more...</Button>
+                <Router>
+                    <Routes>
+                        <Route exact path='/' element={<BooksCardsComponent books={books} total={total} ref={ref} handleClickMore={handleClickMore}/>}/>
+                        <Route path='/bookCard/:id' element={<BookCardComponent books={books}/>}/>
+                    </Routes>
+                </Router>
             </div>
         }
     };

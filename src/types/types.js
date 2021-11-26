@@ -5,6 +5,6 @@ export const BookType = PropTypes.shape({
     authors: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string,
     imageLinks: PropTypes.shape({
-        smallThumbnail: PropTypes.string
+        thumbnail: PropTypes.string
     })
 });

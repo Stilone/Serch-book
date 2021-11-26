@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 
 export const ProgressCircularComponent = () => {
     return (
-        <Box sx={{display: 'flex'}}>
+        <Box className='progress' sx={{display: 'flex'}}>
             <CircularProgress/>
         </Box>
     );
