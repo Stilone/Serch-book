@@ -8,8 +8,8 @@ import {
 import {BookType} from '../../types/types';
 import Search from '../../components/search/search.component';
 import {ProgressCircularComponent} from '../../components/progress/progress.circular.component';
-import {BookCardComponent} from "../book/book.card.component";
-import BooksCardsComponent from "../books/books.cards.component";
+import {BookCardComponent} from "../../components/book/book.card.component";
+import BooksCardsComponent from "../../components/books/books.cards.component";
 
 const BooksPage = ({books, total, onGetBooks}) => {
     const [query, setQuery] = useState({text: '', categories: '', sort: 'relevance', startIndex: 0});
