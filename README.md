@@ -1,4 +1,4 @@
-# SerchBook-GoogleApi
+# SerchBook GoogleApi
 
 SerchBook-GoogleApi is an elegant book search application powered by the Google Books API, designed to provide a seamless experience for book enthusiasts. This application allows users to search for their favorite books and efficiently organize the search results.
 
@@ -18,8 +18,8 @@ To run the application locally, follow these simple steps:
 
 ## How to Run the Project
 
-1. Clone the repository: `git clone https://github.com/your-username/your-project.git`
-2. Navigate to the project directory: `cd your-project`
+1. Clone the repository: `git clone https://github.com/Stilone/Serch-book.git`
+2. Navigate to the project directory: `cd Serch-book`
 3. Install dependencies: `npm install`
 4. Start the project: `npm start`
 
@@ -31,7 +31,7 @@ To run the application locally, follow these simple steps:
 ![Book Details Page](https://github.com/Stilone/SerchBook-GoogleApi/assets/54247765/cf84d57c-2196-4a17-a7b9-4ad447f3aaff)
 
 ## Additional Notes
-While the application is fully functional, there are some styling issues that may catch your attention. Feel free to explore the codebase and enhance the styles whenever you find it convenient. Your contribution to improving the aesthetics of the application is highly welcomed.
+While the application is fully functional, there are some styling issues that may catch your attention. Styling improvements are on the to-do list, and I plan to address them when time allows. However, you are also welcome to make these changes on your own.
 
 Happy reading! 📚😊✨
 
