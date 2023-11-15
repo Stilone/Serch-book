@@ -23,14 +23,13 @@ To run the application locally, follow these simple steps:
 3. Install dependencies: `npm install`
 4. Start the project: `npm start`
 
-## Screenshots
 ### Main Page
 ![Main Page](https://github.com/Stilone/SerchBook-GoogleApi/assets/54247765/c1bda649-893c-4254-bb22-fae2d5f34b4b)
 
 ### Book Details Page
 ![Book Details Page](https://github.com/Stilone/SerchBook-GoogleApi/assets/54247765/cf84d57c-2196-4a17-a7b9-4ad447f3aaff)
 
-## Additional Notes
+## Description:
 While the application is fully functional, there are some styling issues that may catch your attention. Styling improvements are on the to-do list, and I plan to address them when time allows. However, you are also welcome to make these changes on your own.
 
 
