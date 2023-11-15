@@ -35,9 +35,9 @@ While the application is fully functional, there are some styling issues that ma
 
 
 
-<img align="left" height="400" width="475" alt="" src="https://media.giphy.com/media/137EaR4vAOCn1S/giphy.gif"/>
+<img align="left" height="400" width="575" alt="" src="https://media.giphy.com/media/137EaR4vAOCn1S/giphy.gif"/>
 
-
+---
 
 Happy reading! 📚😊✨
 
