@@ -33,7 +33,7 @@ To run the application locally, follow these simple steps:
 ## Additional Notes
 While the application is fully functional, there are some styling issues that may catch your attention. Styling improvements are on the to-do list, and I plan to address them when time allows. However, you are also welcome to make these changes on your own.
 
-<img align="right" height="400" width="475" alt="" src="https://media.giphy.com/media/fwFjOALhOzeyBKOUaN/giphy.gif"/>
+<img align="left" height="400" width="475" alt="" src="https://media.giphy.com/media/fwFjOALhOzeyBKOUaN/giphy.gif"/>
 
 Happy reading! 📚😊✨
 
