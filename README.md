@@ -3,25 +3,32 @@
 SerchBook-GoogleApi is an elegant book search application powered by the Google Books API, designed to provide a seamless experience for book enthusiasts. This application allows users to search for their favorite books and efficiently organize the search results.
 
 ## Technologies Used
-- **React:** A JavaScript library for building user interfaces. 💻
-- **Redux:** A predictable state container for JavaScript applications. 🔄
-- **Redux-thunk:** Middleware for handling asynchronous actions in Redux. ⚙️
-- **React-hooks:** A feature in React for using state and other React features in functional components. 🎣
-- **Router.v6:** A powerful routing library for React applications. 🗺️
-- **PropTypes:** A library for type-checking React props. 🛡️
-- **css-media:** Media queries for responsive design. 📱
-- **Material-UI:** A popular React UI framework for building responsive and stylish user interfaces. 🎨
-- **GoogleAPI:** Integration with the Google Books API for fetching book data. 📚
+- **React**  💻
+- **Redux**  🔄
+- **Redux-thunk**  ⚙️
+- **React-hooks**  🎣
+- **Router.v6**  🗺️
+- **PropTypes**  🛡️
+- **css-media**  📱
+- **Material-UI** 🎨
+- **GoogleAPI** 📚
+- **WEBPACK** 💻
 
-## Getting Started
-To run the application locally, follow these simple steps:
+## Getting Started:
+To run the application locally, follow these simple steps.
 
-## How to Run the Project
+You can either follow the link:
+ 
+🌐 --- 🌐
+
+Or expand the project your computer:
 
 1. Clone the repository: `git clone https://github.com/Stilone/Serch-book.git`
 2. Navigate to the project directory: `cd Serch-book`
 3. Install dependencies: `npm install`
 4. Start the project: `npm start`
+
+## Screenshots:
 
 ### Main Page
 ![Main Page](https://github.com/Stilone/SerchBook-GoogleApi/assets/54247765/c1bda649-893c-4254-bb22-fae2d5f34b4b)
