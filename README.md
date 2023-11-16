@@ -19,7 +19,7 @@ To run the application locally, follow these simple steps.
 
 You can either follow the link:
  
-🌐 --- 🌐
+🌐 https://stilone.github.io/Serch-book 🌐
 
 Or expand the project your computer:
 
