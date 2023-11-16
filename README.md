@@ -12,7 +12,7 @@ SerchBook-GoogleApi is an elegant book search application powered by the Google 
 - **css-media**  📱
 - **Material-UI** 🎨
 - **GoogleAPI** 📚
-- **WEBPACK** 💻
+- **Webpack** 💻
 
 ## Getting Started:
 To run the application locally, follow these simple steps.
