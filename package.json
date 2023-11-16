@@ -2,11 +2,13 @@
   "name": "searchbook",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://stilone.github.io/Serch-book",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@mui/material": "^5.0.3",
     "@reduxjs/toolkit": "^1.6.2",
+    "gh-pages": "^6.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -17,7 +19,9 @@
   },
   "scripts": {
     "start": "webpack serve --config webpack.config.js --open",
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
